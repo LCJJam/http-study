@@ -1,0 +1,25 @@
+#spring:
+#  application:
+#    name: http-study
+spring:
+  application:
+    name: feign-example
+  profiles:
+    active: default
+  cloud:
+    openfeign:
+      logging:
+        level: FULL        # Feign ?????? ?? ?? ?? (NONE, BASIC, HEADERS, FULL)
+#      client:
+#        config:
+#          default:         # ?? Feign ?????? ???? ?? ??
+#            connect-timeout: 5000 # ?? ???? (???)
+#            read-timeout: 10000   # ?? ???? (???)
+#            loggerLevel: FULL     # ?? ?? (NONE, BASIC, HEADERS, FULL)
+#          jsonPlaceholderClient: # ?? Feign ??????? ???? ??
+#            connect-timeout: 3000
+#            read-timeout: 8000
+#            loggerLevel: BASIC
+
+server:
+  port: 8081

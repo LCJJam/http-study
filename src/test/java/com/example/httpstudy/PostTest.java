@@ -1,12 +1,8 @@
 package com.example.httpstudy;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
-
-import com.example.httpstudy.Post;
-
 class PostTest {
 	@Test
 	void testPostCreation() {

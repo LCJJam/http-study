@@ -72,7 +72,7 @@ public class PostControllerTest {
 
 		mockMvc.perform(get("/posts"))
 			.andExpect(status().isOk())
-			.andExpect(jsonPath("$[0].title").value("Title 1"))
-			.andExpect(jsonPath("$[1].title").value("Title 2"));
+			.andExpect(jsonPath("$[0].id").value(1))
+			.andExpect(jsonPath("$[1].id").value(2));
 	}
 }

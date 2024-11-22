@@ -6,6 +6,15 @@ public class Post {
 	private String title;
 	private String body;
 
+	public Post(Long userId, Long id, String title, String body) {
+		this.userId = userId;
+		this.id = id;
+		this.title = title;
+		this.body = body;
+	}
+
+	public Post() {}
+
 	// Getters and Setters
 	public Long getUserId() {
 		return userId;

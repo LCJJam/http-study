@@ -1,5 +1,7 @@
 package com.example.httpstudy;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,5 +15,9 @@ public class PostService {
 
 	public Post getPostById(Long id) {
 		return jsonPlaceholderClient.getPostById(id);
+	}
+
+	public List<Post> getAllPosts() {
+		return jsonPlaceholderClient.getAllPosts();
 	}
 }

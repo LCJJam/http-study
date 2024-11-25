@@ -10,8 +10,6 @@ import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.httpstudy.JsonPlaceholderClient;
-import com.example.httpstudy.Post;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
 
@@ -30,7 +28,7 @@ public class JsonPlaceholderClientWireMockTest {
 		wireMockServer.start();
 
 		// WireMock 서버의 URL을 Spring 컨텍스트에 주입
-		WireMock.configureFor("localhost", 8081);
+		WireMock.configureFor("http://localhost", 8081);
 	}
 
 	@AfterEach
@@ -40,7 +38,7 @@ public class JsonPlaceholderClientWireMockTest {
 
 	@Test
 	void testGetPostById() {
-		// Stub 설정: /posts/1에 대한 응답을 Mocking
+		// Stub 설정: /post/1에 대한 응답을 Mocking
 		wireMockServer.stubFor(
 			get(urlEqualTo("/post/1"))
 				.willReturn(aResponse()
@@ -73,6 +71,6 @@ public class JsonPlaceholderClientWireMockTest {
 		assertThat(post.getBody()).isEqualTo(body);
 
 		// WireMock 검증
-		// wireMockServer.verify(getRequestedFor(urlEqualTo("/post/1")));
+		wireMockServer.verify(getRequestedFor(urlEqualTo("/post/1")));
 	}
 }
